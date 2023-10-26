@@ -4,5 +4,5 @@ from .views import index, createStudent
 
 urlpatterns = [
     path('', index, name="index"),
-    path('/createStudent', createStudent, name="createStudent")
+    path('createStudent/', createStudent, name="createStudent")
 ]
