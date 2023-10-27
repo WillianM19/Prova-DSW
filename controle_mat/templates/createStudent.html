@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    {{form.as_p}}
+    <form action="{% url 'createStudent' %}" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Criar</button>
+  </form>
 </body>
 </html>
