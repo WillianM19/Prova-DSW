@@ -50,3 +50,11 @@ table button {
     font-weight: 700px;
     cursor: pointer;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 400px;
+    gap: 20px;
+}
