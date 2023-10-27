@@ -33,8 +33,9 @@
                 <td>{{aluno.cidade}}</td>
                 <td>{{aluno.curso}}</td>
                 <td>
-                    <button style="background-color: blue">Editar</button>
-                    <button style="background-color: red">Remover</button>
+                    <button style="background-color: blue"><a href="editStudent/{{ aluno.id }}">Editar</a></button>
+                    <button style="background-color: red"><a href="deleteStudent/{{ aluno.id }}">Remover</a></button>
+                    <button style="background-color: green"><a href="showStudent/{{ aluno.id }}">Mostrar</a></button>
                 </td>
             </tr>
         {% endfor %}

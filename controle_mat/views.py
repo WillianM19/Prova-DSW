@@ -20,3 +20,26 @@ def createStudent(request):
    else:
        form = CreateUserForm()
        return render(request, 'createStudent.html', {'form': form})
+   
+def deleteStudent(request, id):
+  aluno = Aluno.objects.get(id=id)
+  aluno.delete()
+  return HttpResponseRedirect('/')
+
+def showStudent(request, id):
+    aluno = Aluno.objects.get(id=id)
+    return render(request, 'showStudent.html', {'aluno': aluno})
+
+
+def editStudent(request, id):
+   aluno = Aluno.objects.get(id=id)
+   if request.method == "POST":
+       form = CreateUserForm(request.POST)
+       if form.is_valid():
+           form.save()
+           return HttpResponseRedirect('/')
+       else:
+           return render(request, 'createStudent.html', {'form': form})
+   else:
+       form = CreateUserForm()
+       return render(request, 'createStudent.html', {'form': form})
