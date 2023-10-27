@@ -33,13 +33,14 @@ def showStudent(request, id):
 
 def editStudent(request, id):
    aluno = Aluno.objects.get(id=id)
+   form = CreateUserForm(request.POST, instance=aluno)
    if request.method == "POST":
-       form = CreateUserForm(request.POST, instance=aluno)
        if form.is_valid():
            form.save()
            return HttpResponseRedirect('/')
        else:
-           return render(request, 'createStudent.html', {'form': form})
+           return render(request, 'editStudent.html', {'form': form, 'aluno': aluno})
    else:
        form = CreateUserForm(instance=aluno)
-       return render(request, 'createStudent.html', {'form': form})
+       return render(request, 'editStudent.html', {'form': form, 'aluno': aluno})
+
