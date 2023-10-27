@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'index.css' %}">
-    <title>Document</title>
+    <title>Controle de Matrículas</title>
 </head>
 <body>
     <h1>LISTA DE ALUNOS</h1>
@@ -26,7 +26,7 @@
         </tr>
         {% for aluno in alunos %}
             <tr>
-                <td>{{aluno.nome}}</td>
+                <td><a href="showStudent/{{ aluno.id }}">{{aluno.nome}}</a></td>
                 <td>{{aluno.data_de_nascimento}}</td>
                 <td>{{aluno.endereco}}</td>
                 <td>{{aluno.email}}</td>
@@ -35,7 +35,6 @@
                 <td>
                     <button style="background-color: blue"><a href="editStudent/{{ aluno.id }}">Editar</a></button>
                     <button style="background-color: red"><a href="deleteStudent/{{ aluno.id }}">Remover</a></button>
-                    <button style="background-color: green"><a href="showStudent/{{ aluno.id }}">Mostrar</a></button>
                 </td>
             </tr>
         {% endfor %}

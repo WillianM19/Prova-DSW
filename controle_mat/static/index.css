@@ -58,3 +58,17 @@ form {
     max-width: 400px;
     gap: 20px;
 }
+
+form :where(input, select, button) {
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+form button {
+    background-color: #009879;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
